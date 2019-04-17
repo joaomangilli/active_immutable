@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - spec/spec_helper.rb
+    - Gemfile
+    - Gemfile.lock
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+Metrics/LineLength:
+  Max: 100
