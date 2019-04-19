@@ -18,7 +18,7 @@ module ActiveRecord
       end
 
       # Overrides ActiveRecord::Persistence#_update_record method
-      def _update_record(_attribute_names = self.attribute_names)
+      def _update_record(_attribute_names = attribute_names)
         create_new_version
       end
 
@@ -29,7 +29,9 @@ module ActiveRecord
       end
 
       def next_version
-        self.class.unscoped.find_by(DEFAULT_PREVIOUS_VERSION_ID_COLUMN_NAME => id)
+        self.class.unscoped.find_by(
+          DEFAULT_PREVIOUS_VERSION_ID_COLUMN_NAME => id
+        )
       end
 
       def previous_version

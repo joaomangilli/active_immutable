@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name = 'active_record_immutable'
   s.version = '0.1.0'
@@ -11,5 +13,6 @@ Gem::Specification.new do |s|
   s.files = ['lib/active_record/immutable.rb']
   s.add_runtime_dependency 'activerecord', '>= 5.2.3'
   s.add_development_dependency 'rspec', '~> 3.8'
+  s.add_development_dependency 'rubocop', '~> 0.67.2'
   s.add_development_dependency 'sqlite3', '~> 1.4.0'
 end

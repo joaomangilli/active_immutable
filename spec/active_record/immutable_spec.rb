@@ -2,8 +2,14 @@
 
 describe ActiveRecord::Immutable do
   let!(:john_person) { Person.create(name: 'john') }
-  let!(:luc_person) { Person.create(name: 'luc', ActiveRecord::Immutable::DEFAULT_PREVIOUS_VERSION_ID_COLUMN_NAME => john_person.id) }
   let!(:liam_person) { Person.create(name: 'liam') }
+
+  let!(:luc_person) do
+    Person.create(
+      name: 'luc',
+      ActiveRecord::Immutable::DEFAULT_PREVIOUS_VERSION_ID_COLUMN_NAME => john_person.id
+    )
+  end
 
   describe '.default_scope' do
     it 'should return two people' do
