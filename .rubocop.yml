@@ -4,6 +4,7 @@ AllCops:
     - spec/spec_helper.rb
     - Gemfile
     - Gemfile.lock
+    - vendor/**/*
 Documentation:
   Enabled: false
 Metrics/BlockLength:
