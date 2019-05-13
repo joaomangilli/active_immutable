@@ -1,5 +1,7 @@
 require 'active_record'
 require 'active_record/immutable'
+require 'active_record/connection_adapters/abstract/immutable_statements'
+require 'byebug'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -25,4 +27,8 @@ end
 
 class Person < ActiveRecord::Base
   include ActiveRecord::Immutable
+end
+
+class PersonMigration < ActiveRecord::Migration[5.2]
+  include ActiveRecord::ConnectionAdapters::ImmutableStatements
 end
